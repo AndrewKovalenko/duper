@@ -12,5 +12,8 @@ defmodule Duper.ResultsTest do
     duplicates = Results.get_duplicates()
 
     assert length(duplicates) == 2
+
+    assert ~w{path2 path1} in duplicates
+    assert ~w{path4 path3} in duplicates
   end
 end
