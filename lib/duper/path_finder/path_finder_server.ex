@@ -7,8 +7,8 @@ defmodule Duper.PathFinder.Server do
 
   def init(dir), do: DirWalker.start_link(dir)
 
-  def handle_call({:next_path}, _from, dirWalker) do
-    path = case DirWalker.next_path(dirWalker) do
+  def handle_call(:next_path, _from, dirWalker) do
+    path = case DirWalker.next(dirWalker) do
       [path] -> path
       other -> other
     end
